@@ -1,0 +1,9 @@
+setxkbmap se && ~/.Xmodmap &
+killall picom; picom &
+~/.local/bin/wal -R -q &
+killall nm-applet; nm-applet &
+killall udiskie; udiskie -nt &
+killall dunst; dunst &
+lxsession &
+emacs --daemon &
+xautolock -locker ~/.scripts/lock &

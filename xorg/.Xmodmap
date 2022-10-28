@@ -1,0 +1,21 @@
+!!! General Settings
+clear lock
+keysym Caps_Lock = BackSpace
+
+!!! Step 1 [60%]
+keysym e = d D d D eth ETH eth
+keysym t = k K k K kra ampersand kra
+keysym d = t T t T thorn THORN thorn
+keysym k = e E e E EuroSign cent EuroSign
+
+!!! Step 2 [75%]
+!keysym l = o O o O oe OE oe
+!keysym o = l L l L lstroke Lstroke lstroke
+!keysym j = n N n N rightdoublequotemark rightsinglequotemark rightdoublequotemark
+!keysym n = j J j J dead_hook dead_horn dead_hook
+
+!!! Step 3 [83%]
+!keysym r = f F f F dstroke ordfeminine dstroke
+!keysym f = r R r R registered registered registered
+!keysym p = odiaeresis Odiaeresis odiaeresis Odiaeresis oslash Oslash oslash
+!keysym odiaeresis = p P p P thorn THORN thorn

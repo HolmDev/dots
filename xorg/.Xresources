@@ -1,0 +1,17 @@
+#define _font FiraCode Nerd Font Mono
+#define _font_size 16
+
+*.font: _font _font_size
+*font: _font _font_size
+*.font_type: _font
+*font_type: _font
+*.font_size: _font_size
+*font_size: _font_size
+
+*.gaps: 8
+*gaps: 8
+
+*.border_width: 2
+*border_width: 2
+
+dwm.font: _font:size=_font_size
