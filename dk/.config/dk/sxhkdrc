@@ -1,0 +1,78 @@
+# {{{ WM Movement
+
+# focus next or previous window
+super + {j,e}
+	dkcmd win focus {next,prev}
+
+# move the active window up/down the stack
+super + shift + {j,e}
+	dkcmd win mvstack {down,up}
+
+# close window, swap tiled window in/out of master, cycle tiled windows in place
+super + shift + {c,space,Tab}
+	dkcmd win {kill,swap,cycle}
+
+super + {_, shift + , ctrl + }{1-9,0}
+	dkcmd ws {view,send,follow} {1-9,10}
+
+# resize window, signed (+/-) for relative changes
+super + ctrl + {h,j,e,l}
+	dkcmd win resize {w=-20,h=+20,h=-20,w=+20}
+
+super + f
+	dkcmd win full
+
+super + ctrl + r
+	dkcmd restart
+
+super + b
+		polybar-msg cmd toggle
+
+# }}}
+
+# {{{ Programs
+
+super + r
+	rofi -show drun
+
+super + w
+	qutebrowser
+
+super + d
+	thunar
+
+super + t
+	emacsclient -c
+
+super + Return
+	kitty
+
+super + ctrl + q
+	~/.scripts/goodbye
+
+super + shift + s
+	xcolor | xclip -sel clip && dunstify "Copied color: $(xclip -o -sel clip)"
+
+super + {_, shift} + g
+	scrot {-F, -f -s} ~/Pictures/scrot/%Y-%m-%d-%H:%M:%S.png
+
+# }}}
+
+# {{{ Macro keys
+
+{XF86AudioRaiseVolume,XF86AudioLowerVolume}
+	pamixer {-i,-d} 2; ~/.scripts/display-volume
+
+XF86AudioMute
+	pamixer -t; ~/.scripts/display-volume
+
+XF86AudioPlay
+	playerctl play-pause
+
+{XF86AudioPrev,XF86AudioNext}
+	playerctl {previous, next}
+
+{XF86Tools, XF86Launch5, XF86Launch6, XF86Launch7, XF86Launch8}
+	dunstify "Marco Key #{1,2,3,4,5}"
+
+# }}}
