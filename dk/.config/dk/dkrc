@@ -74,7 +74,6 @@ if grep -q 'error:' "$logfile"; then
 	exit 1
 fi
 
-polybar &
 nitrogen --restore &
 
 exit 0
