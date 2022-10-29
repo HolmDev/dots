@@ -1,0 +1,8 @@
+configuration {
+ modi: "window,drun,ssh,combi";
+ font: "FiraCode Nerd Font Mono 12";
+ combi-modi: "window,drun,ssh";
+ show-icons: true;
+
+}
+@theme "~/.cache/wal/colors-rofi-common.rasi"

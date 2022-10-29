@@ -33,6 +33,10 @@ These dotfiles cover and require the following programs
 | xorg | pywal, picom, nm-applet, udiskie, dunst, lxsession, emacs, xautolock |
 | dk | dk, polybar, sxhkd, nitrogen, rofi, kitty, qutebrowser, thunar, emacs, xcolor, xclip, dunstify, pamixer, playerctl |
 | zathura | zathura |
+| emacs | emacs |
+| wal | wal |
+| rofi | rofi, wal |
+| dunst | dunst |
 
 ## Notes
 
