@@ -1,11 +1,11 @@
 # {{{ WM Movement
 
 # focus next or previous window
-super + {j,e}
+super + {j,k}
 	dkcmd win focus {next,prev}
 
 # move the active window up/down the stack
-super + shift + {j,e}
+super + shift + {j,k}
 	dkcmd win mvstack {down,up}
 
 # close window, swap tiled window in/out of master, cycle tiled windows in place
@@ -16,7 +16,7 @@ super + {_, shift + , ctrl + }{1-9,0}
 	dkcmd ws {view,send,follow} {1-9,10}
 
 # resize window, signed (+/-) for relative changes
-super + ctrl + {h,j,e,l}
+super + ctrl + {h,j,k,l}
 	dkcmd win resize {w=-20,h=+20,h=-20,w=+20}
 
 super + f
@@ -38,10 +38,10 @@ super + r
 super + w
 	qutebrowser
 
-super + d
+super + e
 	thunar
 
-super + t
+super + d
 	emacsclient -c
 
 super + Return
