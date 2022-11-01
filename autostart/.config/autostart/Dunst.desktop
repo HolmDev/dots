@@ -1,0 +1,8 @@
+[Desktop Entry]
+Categories=Utility;
+Comment=Notification daemon
+Name=Dunst
+StartupNotify=true
+Terminal=false
+Type=Application
+Exec=/usr/bin/dunst

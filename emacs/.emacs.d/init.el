@@ -381,3 +381,8 @@
 ;; {{{ Org mode settings
 (org-babel-do-load-languages 'org-babel-load-languages '((python . t)))
 ;; }}}
+
+;; {{{ Misc settings
+(dolist (hook '(text-mode-hook))
+	(add-hook hook (lambda () (flyspell-mode 1))))
+;; }}}

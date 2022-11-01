@@ -1,0 +1,11 @@
+#!/bin/bash
+
+DMENU='rofi -dmenu -p Goodbye -i -l 4'
+choice=$(echo -e " lock\n logout\n襤 poweroff\n reboot" | $DMENU)
+
+case "$choice" in
+	" lock") sleep 0.2 && xautolock -locknow ;;
+	" logout") kill $(pgrep -f $DESKTOP_SESSION) ;;
+	"襤 poweroff") poweroff --no-wall ;;
+	" reboot") reboot --no-wall ;;
+esac
