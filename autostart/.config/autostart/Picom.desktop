@@ -1,8 +1,0 @@
-[Desktop Entry]
-Categories=Utility;
-Comment=Compositor
-Name=Picom
-StartupNotify=true
-Terminal=false
-Type=Application
-Exec=/usr/bin/picom

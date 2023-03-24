@@ -31,16 +31,15 @@ These dotfiles cover and require the following programs
 | Package | Dependencies |
 |:--|:--|
 | xorg | pywal, lxsession, emacs, xautolock |
-| dk | dk, polybar, sxhkd, nitrogen, rofi, kitty, qutebrowser, thunar, emacs, xcolor, xclip, dunstify, pamixer, playerctl |
+| dk | dk, polybar, sxhkd, nitrogen, rofi, xcolor, xclip, dunstify, pamixer, playerctl, kpmenu |
 | zathura | zathura |
 | emacs | emacs |
 | wal | pywal |
 | rofi | rofi, pywal |
 | dunst | dunst |
-| fish | fish, pfetch, exa, emacs, pywal |
+| fish | fish, pfetch, exa, pywal |
 | qutebrowser | qutebrowser, xrcat |
-| qtile | qtile, xrcat, kitty, qutebrowser, thunar, emacs, xcolor, xclip, rofi, dunstify, pamixer, playerctl |
-| autostart | 1password, discord, dunst, easyeffects, nm-applet, openrgb, picom, udiskie |
+| qtile | qtile, xrcat, xcolor, xclip, rofi, dunstify, pamixer, playerctl |
 | scripts | xrcat, huecat, openrgb, rofi, xautolock, i3lock-color, dunst, pamixer |
 
 ## Notes

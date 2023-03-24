@@ -12,12 +12,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(auth-source-save-behavior nil)
- '(custom-safe-themes
-	 '("6b5c518d1c250a8ce17463b7e435e9e20faa84f3f7defba8b579d4f5925f60c1" "f682d31faa3e97bec2f2bbc5220b8f1ddb3c052bbe4df8aa7b69d727897cf082" default))
- '(org-agenda-files
-	 '("~/Documents/org/todo.org" "~/Documents/org/calender.org"))
  '(package-selected-packages
-	 '(yaml-mode company-php php-mode gnuplot evil-vimish-fold vimish-fold evil-collection monkeytype typescript-mode svelte-mode company-go fish-mode neotree flycheck which-key company company-jedi markdown-mode evil-goggles company-math company-auctex auctex elisp-format elfeed smooth-scrolling good-scroll use-package telephone-line rainbow-mode rainbow-delimiters org-present linum-relative helpful gruvbox-theme dashboard company-quickhelp))
+	 '(elisp-format helpful format-all flycheck org-present elfeed smooth-scrolling good-scroll linum-relative telephone-line rainbow-delimiters rainbow-mode gruvbox-theme dashboard evil-vimish-fold vimish-fold company-go company-jedi company-auctex company-math company-quickhelp company yaml-mode svelte-mode typescript-mode which-key evil-goggles evil-collection evil use-package))
  '(warning-suppress-types '((comp)))
  '(whitespace-style
 	 '(face trailing tabs spaces lines newline missing-newline-at-eof empty indentation space-after-tab space-before-tab space-mark tab-mark newline-mark)))
@@ -99,8 +95,12 @@
 	(define-key evil-normal-state-map (kbd "SPC r t") 'ansi-term)
 	(define-key evil-normal-state-map (kbd "SPC r w") 'eww)
 
+	(define-key evil-normal-state-map (kbd "SPC p m") 'compile)
+
+	(define-key evil-normal-state-map (kbd "SPC t i") '(lambda () (interactive) (indent-region (point-min) (point-max) nil)))
+
 	(which-key-add-key-based-replacements
-		"SPC c" "Charchters"
+		"SPC c" "Characters"
 		"SPC c u" "Insert Unicode Char"
 		"SPC c n" "Insert Nerdfont Char"
 
@@ -118,6 +118,12 @@
 		"SPC r" "Programs"
 		"SPC r t" "Terminal"
 		"SPC r w" "Web"
+
+		"SPC p" "Programming"
+		"SPC p m" "Compile"
+
+		"SPC t" "Text operations"
+		"SPC t i" "Indent whole buffer"
 
 		"SPC Q" "Kill emacs"
 
@@ -160,14 +166,6 @@
 	:ensure t)
 
 (use-package
-	fish-mode
-	:ensure t)
-
-(use-package
-	php-mode
-	:ensure t)
-
-(use-package
 	yaml-mode
 	:ensure t)
 ;; }}}
@@ -205,13 +203,8 @@
 	company-go
 	:ensure t
 	:after company)
-
-(use-package
-	company-php
-	:ensure t
-	:after company)
 ;; }}}
-;; {{{ Visuals 
+;; {{{ Visuals
 (use-package vimish-fold
 	:ensure t
 	:after evil)
@@ -222,10 +215,6 @@
 	(setq evil-vimish-fold-target-modes '(prog-mode conf-mode text-mode))
 	(global-evil-vimish-fold-mode 1)
 	:after vimish-fold)
-
-(use-package
-	neotree
-	:ensure t)
 
 (use-package
 	dashboard
@@ -300,15 +289,10 @@
 (use-package
 	elfeed
 	:ensure t
-	:config (setq elfeed-feeds (quote (("https://xkcd.com/rss.xml" xkcd comic)))))
-
-(use-package
-	monkeytype
-	:ensure t)
-
-(use-package
-	gnuplot
-	:ensure t)
+	:config
+	(load (concat user-emacs-directory "rss-feeds.el"))
+	(elfeed-update)
+	(global-set-key (kbd "C-x w") 'elfeed))
 ;; }}}
 ;; {{{ Org
 (use-package
@@ -333,6 +317,10 @@
 	:ensure t
 	:config
 	(global-flycheck-mode))
+
+(use-package
+	format-all
+	:ensure t)
 
 (use-package
 	helpful

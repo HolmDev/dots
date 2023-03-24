@@ -30,11 +30,6 @@ def move_win():
     for w in win_list:
         w.togroup(qtile.current_group.name)
 
-#def torCountry():
-#    ccode = requests.get("http://ip-api.com/json/?fields=countryCode").json()["countryCode"]
-#    return chr(127462+ord(ccode[0])-65)+chr(127462+ord(ccode[1])-65)
-# }}}
-
 # {{{ Keybinds
 keys = [
     # Move focus
@@ -52,10 +47,11 @@ keys = [
     Key(["mod4", "control"], "k", lazy.layout.grow(), desc="Grow focused window"),
     Key(["mod4"],"n", lazy.layout.normalize(), desc="Reset window sizes"),
     # Launch applications
-    Key(["mod4"],"Return", lazy.spawn("kitty"), desc="Launch terminal"),
-    Key(["mod4"],"w", lazy.spawn("qutebrowser"), desc="Launch browser"),
-    Key(["mod4"],"e", lazy.spawn("thunar"), desc="Launch explorer"),
-    Key(["mod4"],"d", lazy.spawn("emacsclient -c"), desc="Launch emacs"),
+    Key(["mod4"],"Return", lazy.spawn(xrcat.getResource("apps.terminal")), desc="Launch terminal"),
+    Key(["mod4"],"w", lazy.spawn(xrcat.getResource("apps.browser")), desc="Launch browser"),
+    Key(["mod4"],"e", lazy.spawn(xrcat.getResource("apps.explorer")), desc="Launch explorer"),
+    Key(["mod4"],"p", lazy.spawn("kpmenu"), desc="Launch password manager"),
+    Key(["mod4"],"d", lazy.spawn(xrcat.getResource("apps.editor")), desc="Launch emacs"),
     # Misc Qtile stuff
     Key(["mod4"],"Tab", lazy.next_layout(), desc="Switch to next layout"),
     Key(["mod4", "shift"], "c", lazy.window.kill(), desc="Kill current window"),
@@ -74,7 +70,7 @@ keys = [
     Key(["mod4", "shift"], "g", lazy.spawn("sh -c 'scrot -f -s ~/Pictures/scrot/%Y-%m-%d-%H:%M:%S.png'"), desc="Take screenshot of a portion of the screen"),
     # Audio control
     Key([], "XF86AudioRaiseVolume", lazy.spawn(expandvars("sh -c 'pamixer -i 2; $HOME/.scripts/display-volume'")), desc="Raise volume"),
-    Key([], "XF86AudioLowerVolume", lazy.spawn(exapandvars("sh -c 'pamixer -d 2; $HOME/.scripts/display-volume'")), desc="Lower volume"),
+    Key([], "XF86AudioLowerVolume", lazy.spawn(expandvars("sh -c 'pamixer -d 2; $HOME/.scripts/display-volume'")), desc="Lower volume"),
     Key([], "XF86AudioMute", lazy.spawn(expandvars("sh -c 'pamixer -t; $HOME/.scripts/display-volume'")), desc="Toggle mute"),
     Key([], "XF86AudioPlay", lazy.spawn("sh -c 'playerctl play-pause'"), desc="Play/pause music"),
     Key([], "XF86AudioPrev", lazy.spawn("sh -c 'playerctl previous'"), desc="Play previous track"),
@@ -135,7 +131,7 @@ screens = [
                     disable_drag=True,
                     rounded=False,
                     highlight_method="line",
-                    highlight_color = [xrcat.getResource("qtile.color4"),xrcat.getResource("qtile.background")],
+                    highlight_color = [xrcat.getResource("qtile.background"),xrcat.getResource("qtile.background")],
                     borderwidth=2,
                     active=xrcat.getResource("qtile.foreground"),
                     this_current_screen_border=xrcat.getResource("qtile.color4"),

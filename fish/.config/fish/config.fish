@@ -1,5 +1,4 @@
 if status is-interactive
-
 		alias ls='exa --color=auto'
 		alias la='exa --color=auto -ah'
 		alias lh='exa --color=auto -lh'

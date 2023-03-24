@@ -15,3 +15,8 @@
 *border_width: 2
 
 dwm.font: _font:size=_font_size
+
+apps.browser: qutebrowser
+apps.explorer: thunar
+apps.terminal: kitty
+apps.editor: emacsclient -c

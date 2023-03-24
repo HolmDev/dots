@@ -2,3 +2,4 @@ setxkbmap se && ~/.Xmodmap &
 xrdb -merge .Xresources && wal -R -q &
 xautolock -locker ~/.scripts/lock &
 lxsession &
+kpmenu --daemon &
