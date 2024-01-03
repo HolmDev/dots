@@ -75,12 +75,6 @@ keys = [
     Key([], "XF86AudioPlay", lazy.spawn("sh -c 'playerctl play-pause'"), desc="Play/pause music"),
     Key([], "XF86AudioPrev", lazy.spawn("sh -c 'playerctl previous'"), desc="Play previous track"),
     Key([], "XF86AudioNext", lazy.spawn("sh -c 'playerctl next'"), desc="Play next track"),
-    # Macro Keys
-    Key([], "XF86Tools", lazy.spawn("dunstify \"Macro Key #1\""), desc="Test macro key #1"),
-    Key([], "XF86Launch5", lazy.spawn("dunstify \"Macro Key #2\""), desc="Test macro key #2"),
-    Key([], "XF86Launch6", lazy.spawn("dunstify \"Macro Key #3\""), desc="Test macro key #3"),
-    Key([], "XF86Launch7", lazy.spawn("dunstify \"Macro Key #4\""), desc="Test macro key #4"),
-    Key([], "XF86Launch8", lazy.spawn("dunstify \"Macro Key #5\""), desc="Test macro key #5"),
 ]
 # }}}
 
@@ -191,14 +185,6 @@ dgroups_app_rules = []  # type: List
 follow_mouse_focus = True
 bring_front_click = False
 cursor_warp = False
-# }}}
-
-# {{{ Floating rules
-floating_layout = layout.Floating(float_rules=[
-    *layout.Floating.default_float_rules,
-    Match(wm_class='ssh-askpass'),  # ssh-askpass
-    Match(title='pinentry'),  # GPG key password entry
-])
 # }}}
 
 # {{{ Other rules

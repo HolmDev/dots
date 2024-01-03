@@ -1,9 +1,0 @@
-!!! General Settings
-clear lock
-keysym Caps_Lock = BackSpace
-
-!!! Possible improvments if time allows it
-!keysym e = d D d D eth ETH eth
-!keysym t = g G g G
-!keysym g = t T t T thorn THORN thorn
-!keysym d = e E e E EuroSign cent EuroSign

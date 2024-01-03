@@ -72,7 +72,4 @@ XF86AudioPlay
 {XF86AudioPrev,XF86AudioNext}
 	playerctl {previous, next}
 
-{XF86Tools, XF86Launch5, XF86Launch6, XF86Launch7, XF86Launch8}
-	dunstify "Marco Key #{1,2,3,4,5}"
-
 # }}}

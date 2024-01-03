@@ -1,0 +1,14 @@
+emacs/.emacs.d/elpa
+emacs/.emacs.d/auto-save-list
+emacs/.emacs.d/recentf
+emacs/.emacs.d/saves
+emacs/.emacs.d/transient
+emacs/.emacs.d/vimish-fold
+
+services/.config/systemd/user/default.target.wants
+
+qutebrowser/.config/qutebrowser/bookmarks
+qutebrowser/.config/qutebrowser/quickmarks
+
+*__pycache__*
+*#*#*

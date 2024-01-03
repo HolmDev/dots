@@ -13,7 +13,7 @@
  ;; If there is more than one, they won't work right.
  '(auth-source-save-behavior nil)
  '(package-selected-packages
-	 '(elisp-format helpful format-all flycheck org-present elfeed smooth-scrolling good-scroll linum-relative telephone-line rainbow-delimiters rainbow-mode gruvbox-theme dashboard evil-vimish-fold vimish-fold company-go company-jedi company-auctex company-math company-quickhelp company yaml-mode svelte-mode typescript-mode which-key evil-goggles evil-collection evil use-package))
+	 '(scad-mode elisp-format helpful format-all flycheck org-present elfeed smooth-scrolling good-scroll linum-relative telephone-line rainbow-delimiters rainbow-mode gruvbox-theme dashboard evil-vimish-fold vimish-fold company-go company-jedi company-auctex company-math company-quickhelp company yaml-mode svelte-mode typescript-mode which-key evil-goggles evil-collection evil use-package))
  '(warning-suppress-types '((comp)))
  '(whitespace-style
 	 '(face trailing tabs spaces lines newline missing-newline-at-eof empty indentation space-after-tab space-before-tab space-mark tab-mark newline-mark)))
@@ -167,6 +167,10 @@
 
 (use-package
 	yaml-mode
+	:ensure t)
+
+(use-package
+	scad-mode
 	:ensure t)
 ;; }}}
 ;; {{{ Company modes

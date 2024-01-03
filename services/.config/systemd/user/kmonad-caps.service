@@ -1,0 +1,10 @@
+[Unit]
+Description=Kmonad (Caps Layer Blackwidow config)
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/kmonad %h/.config/kmonad/caps
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
